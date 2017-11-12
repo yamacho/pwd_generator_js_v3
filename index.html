@@ -81,7 +81,15 @@
         var result = document.getElementById('result');
 
         function getPassword() {
-          result.value = 'qwertyuiop';
+          var seed = 'abcdefghijklmnopqrstuvwxyz';
+          var len = slider.value;
+          var pwd = '';
+
+          while (len--) {
+            pwd += seed[Math.floor(Math.random() * seed.length)]
+          }
+
+          result.value = pwd;
         }
 
         slider.addEventListener('change', function() {
